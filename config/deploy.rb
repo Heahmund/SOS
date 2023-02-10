@@ -24,8 +24,7 @@ append :linked_dirs, "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vend
 # Default value for local_user is ENV['USER']
 
 # Uncomment the following to require manually verifying the host key before first deploy.
-#  ssh_options: { user: 'deployer', forward_agent: true,  auth_methods: %w(publickey password), port: 2222 }
- 
+set :ssh_options, { user: 'deployer', forward_agent: true,  auth_methods: %w(publickey password), port: 2222 }
 namespace :deploy do
 
   desc 'Restart application'
