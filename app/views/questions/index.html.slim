@@ -1,1 +1,5 @@
-p=link_to 'Ask question', new_question_path
+.ind
+    - collection.each do |question|
+      p= link_to question.title, question
+.ind2
+  h2= link_to 'Ask question', new_question_path

@@ -1,3 +1,138 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.question{
+  text-shadow:1px -1px 0px rgb(77, 1, 1);
+  padding-top: 10px;
+  margin-top: 35px;
+  background: -webkit-linear-gradient(top, rgb(45, 51, 65) 0%,rgb(31, 37, 53)100%);
+  border-inline-start:  1rem solid  rgba(185, 45, 45, 0.979);
+  writing-mode: horizontal-tb;
+  padding: 5;
+  text-align: left; 
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.555),inset -4px 0px 3px 3px #e0d6d648;
+}
+.answer{    
+  text-shadow:1px -1px 0px rgb(3, 78, 72);
+  margin-top: 20px;
+  // background: rgba(1, 78, 165, 0.24);
+  background: -webkit-linear-gradient(top, rgb(45, 51, 65) 0%,rgb(31, 37, 53)100%);
+  padding-top: 10px;
+  padding: 5;
+  text-align: left; 
+  border-inline-start:  1rem solid  #00b7ff56; 
+  writing-mode: horizontal-tb;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.555),inset -4px 0px 3px 3px #e0d6d648;
+}
+.comments,.answer-comments{
+  background: rgba(0, 0, 0, 0.11);
+  padding: 15;
+  text-align: left; 
+
+  writing-mode: horizontal-tb;
+  border-bottom-right-radius: 2%;
+}
+.new_answer,.new_question{
+  margin-top: 20px;
+  padding-top: 10px;
+  background: -webkit-linear-gradient(top, rgb(65, 51, 45) 0%,rgb(53, 43, 31)100%);
+  padding: 15;
+  text-align: left; 
+  writing-mode: horizontal-tb;
+  border-radius: 10px;
+  border-inline-start:  1rem solid  #fdfeff56; 
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.555),inset -4px 0px 3px 3px #e0d6d648;
+  textarea {
+
+    width: 506px; height: 115px;
+  
+  }
+}
+.new_answer{
+  textarea {
+    margin-left: 20px;
+    width: 506px; height: 115px;
+  
+  }
+}
+.row{
+  
+  // background: rgba(255, 207, 207, 0.267);
+  // border-inline-start:  1rem solid  rgba(185, 45, 45, 0);
+  box-shadow:inset 0px 1px 2px 0px #a6827e,0px 0px 10px 10px rgba(0, 0, 0, 0.555);
+	background:-webkit-linear-gradient(top, rgb(54, 30, 17) 0%,rgb(46, 8, 2)100%);
+	background-color:#7d5d3b;
+	border-radius:3px;
+	border:1px solid #54381e;
+	color:#ffffff;
+	text-shadow:0px 1px 0px #4d3534;
+
+               
+
+  writing-mode: horizontal-tb;
+  margin-top: 0px;
+  padding-top: 40px;
+  padding-right: 15px;
+  padding-left: 10px;
+  padding-bottom: 100%;
+  margin-left: 10em;
+  margin-right: 10em;
+  text-align: center; 
+  border-radius: 0;
+}
+.user{
+  // border-inline-start:  2px solid  hsl(49, 85%, 74%);
+  border-radius:16px;
+  background-color: hsla(0, 0%, 100%, 0.048);
+  padding: 1px 1px 1px 1px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.568);
+  margin-right: 15px;
+  margin-left: 10px;
+  display: flex;
+  p {
+
+    color: hsla(49, 85%, 74%, 0.904);
+  }
+}
+h4,h1,p {
+  font-weight: 900;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+h1,h2{
+  color: hsla(188, 100%, 94%, 0.938);
+  padding-left: 15px;
+  margin-top: 0;
+}
+h4{
+  color: hsla(188, 100%, 94%, 0.938);
+  padding-top: 1px;
+  
+}
+h5{
+  padding-left: 30em;
+}
+p {
+  color: hsl(229, 100%, 92%);
+}
+textarea {
+  margin-left: 0px;
+  width: 506px; height: 115px;
+  color: hsl(229, 100%, 92%);
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.253);
+}
+input {
+  color: hsl(229, 100%, 92%);
+  margin-bottom: 10px;
+  box-shadow: inset 1px 1px 1px 1px #e0d6d648;
+}
+
+.edit_answer{
+margin-left: 15px;
+background: -webkit-linear-gradient(top, rgba(105, 35, 5, 0.253) 0%,rgb(53, 43, 31)100%);
+}
