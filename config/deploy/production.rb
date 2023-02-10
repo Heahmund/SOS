@@ -17,12 +17,13 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-# role :app, %w{deploy@example.com}, my_property: :my_value
-# role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
-# role :db,  %w{deploy@example.com}
+role :app, %w{musaev@158.160.20.109}
+role :web, %w{musaev@158.160.20.109}
+role :db,  %w{musaev@158.160.20.109}
 
+set :rails_env, :production
 
-
+server '158.160.20.109', user: 'musaev', roles: %w{web app db}, primary: true
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
@@ -41,21 +42,8 @@
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-#
-# The server-based syntax can be used to override options:
-# ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: "please use keys"
-#   }
+ set :ssh_options, {
+   keys: %w(/home/musaev/.ssh/id_rsa.pub),
+   forward_agent: true,
+   auth_methods: %w(publickey password)
+ }
