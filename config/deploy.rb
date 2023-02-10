@@ -5,7 +5,7 @@ set :application, "sos"
 set :repo_url, "git@github.com:Heahmund/SOS.git"
 
 # Default branch is :Second
-ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/musaev/deployer/sos"
@@ -24,4 +24,16 @@ append :linked_dirs, "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vend
 # Default value for local_user is ENV['USER']
 
 # Uncomment the following to require manually verifying the host key before first deploy.
-# set :ssh_options, verify_host_key: :secure
+#  ssh_options: { user: 'deployer', forward_agent: true,  auth_methods: %w(publickey password), port: 2222 }
+ 
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :publishing, :restart
+end
