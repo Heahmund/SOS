@@ -16,7 +16,7 @@ set :format, :pretty
 
 
 # Default value for :linked_files is []
-append :linked_files, %w{config/database.yml 'config/master.key' 'config/private_pub.yml'}
+append :linked_files, %w{config/database.yml 'config/private_pub.yml'}
 
 # Default value for linked_dirs is []
 append :linked_dirs, "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system"
