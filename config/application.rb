@@ -1,4 +1,5 @@
-require_relative 'boot'
+require File.expand_path('../boot', __FILE__)
+
 
 require 'rails/all'
 
@@ -19,11 +20,15 @@ module SOS
       g.test_framework :rspec,
                        fixtures: true,
                        view_spec: false,
-                       herper_specs: false,
+                       helper_specs: false,
                        routing_specs: false,
                        request_specs: false,
                        controller_specs: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
+
+      # config.autoload_paths << Rails.root.join('lib/middleware')
+
+      # config.middleware.insert_after Rack::Runtime, 'DailyRateLimit' unless Rails.env.test?
     end
   end
 end

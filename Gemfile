@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+# gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -15,8 +16,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-gem 'rubocop'
 # Use CoffeeScript for .coffee assets and views
+gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -25,11 +26,43 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
+gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'rails-controller-testing'
 gem 'slim-rails'
+gem 'twitter-bootstrap-rails', git: 'git@github.com:seyhunak/twitter-bootstrap-rails.git'
+gem 'carrierwave'
+gem 'remotipart'
+gem 'private_pub'
+gem 'thin'
+gem 'inherited_resources'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'omniauth-github'
+gem "omniauth-rails_csrf_protection"
+
+gem 'cancan'
+gem 'doorkeeper', '> 4.4.0'
+gem "active_model_serializers"
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'redis-throttle', git: 'git@github.com:andreareginato/redis-throttle.git'
+#gem 'delayed_job_active_record'
+gem 'whenever'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: nil
+gem 'mysql2'
+gem 'thinking-sphinx'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,6 +75,11 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'capybara', '>= 2.15'
+  gem 'capybara-webkit'
+  gem 'launchy'
 end
 
 group :development do
@@ -55,13 +93,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  gem 'json_spec'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'shoulda-matchers'
-  gem 'launchy'
 end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

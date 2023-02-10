@@ -1,43 +1,27 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :load_question, only: %i[show edit update destroy]
-  def index
-    @questions = Question.all
+class QuestionsController < InheritedResources::Base
+  before_action :authenticate_user!, only: [ :new, :create ]
+  before_action :build_answer, only: :show
+  before_action :build_attachment, only: :new
+
+  respond_to :html
+
+  protected
+
+  def create_resource(object)
+    object.user = current_user
+    super
   end
 
-  def new
-    @question = Question.new
+  def build_answer
+    @answer = resource.answers.build
+    @answer.attachments.build
   end
 
-  def show; end
-
-  def edit; end
-
-  def create
-    @question = Question.new(question_params)
-    if @question.save
-  
-     redirect_to @question
-     flash[:alert] = 'Your question successfully created.'
-    else 
-      render :new
-    end
-  end
-  def update
-    @question.update(question_params)
-    redirect_to @question
-  end
-  def destroy
-    @question.destroy
-    redirect_to questions_path
-  end
-  private
- 
-  def load_question
-    @question = Question.find(params[:id])
+  def build_attachment
+    build_resource.attachments.build
   end
 
   def question_params
-    params.require(:question).permit(:title, :body)
+    params.require(:question).permit(:title, :body, attachments_attributes: [:file])
   end
 end
