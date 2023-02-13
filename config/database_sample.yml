@@ -82,4 +82,5 @@ production:
   <<: *default
   database: SS_production
   username: SOS
-  password: <%= ENV['SOS_DATABASE_PASSWORD'] %>
+  password: 12344321
+# /opt/nginx/conf/nginx.conf
