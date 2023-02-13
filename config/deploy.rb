@@ -11,6 +11,7 @@ set :repo_url, "git@github.com:Heahmund/SOS.git"
 set :deploy_to, "/home/musaev/deployer/SOS"
 set :deploy_user, 'musaev'
 # Default value for :format is :airbrussh.
+set :conditionally_migrate, true
 set :format, :pretty
 
 
