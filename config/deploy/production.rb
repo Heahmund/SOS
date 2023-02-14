@@ -22,6 +22,7 @@ role :web, %w{musaev@84.201.153.244}
 role :db,  %w{musaev@84.201.153.244}
 
 set :rails_env, :production
+set :stage, :production
 
 server '84.201.153.244', user: 'musaev', roles: %w{web app db}, primary: true
 # Configuration
