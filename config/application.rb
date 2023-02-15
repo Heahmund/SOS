@@ -27,7 +27,8 @@ module SOS
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
 
       # config.autoload_paths << Rails.root.join('lib/middleware')
-      config.eager_load_paths << "#{Rails.root}/lib"
+      # config.eager_load_paths << "#{Rails.root}/lib"
+      config.eager_load_paths << Rails.root.join('lib')
       # config.middleware.insert_after Rack::Runtime, 'DailyRateLimit' unless Rails.env.test?
     end
   end
