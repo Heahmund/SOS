@@ -19,6 +19,7 @@ require "capistrano/bundler"
 require "capistrano/rails"
 require "capistrano/scm/git"
 require "capistrano/sidekiq"
+require "whenever/capistrano"
 install_plugin Capistrano::SCM::Git
 
 # Include tasks from other gems included in your Gemfile
