@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '~> 5.2.3'
 gem 'rails', '~> 5.2.0'
@@ -23,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -50,7 +50,7 @@ gem 'oj_mimic_json'
 gem 'redis-throttle', git: 'git@github.com:andreareginato/redis-throttle.git'
 #gem 'delayed_job_active_record'
 gem 'whenever'
-gem 'sidekiq', '~> 5.2.0'
+# gem 'sidekiq', '> 5.2.0', '< 6.0.0.pre1'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'mysql2'
 gem 'thinking-sphinx'
@@ -96,7 +96,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
-  gem 'capistrano-sidekiq', require: false
+  # gem 'capistrano-sidekiq', require: false
 end
 
 group :test do
