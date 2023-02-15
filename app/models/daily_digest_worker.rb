@@ -1,10 +1,10 @@
 class DailyDigestWorker
   include Sidekiq::Worker
-  include Sidekiq::Schedulable
+  # include Sidekiq::Schedulable
 
-  recurrence { daily(1) }
+  # recurrence { daily(1) }
 
   def perform
-    User.send_daily_digest
+    # User.send_daily_digest
   end
 end
