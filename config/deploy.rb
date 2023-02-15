@@ -17,7 +17,7 @@ set :format, :pretty
 
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/private_pub.yml", ".env"
+append :linked_files, "config/database.yml", "config/private_pub.yml", "config/private_pub_thin.yml", ".env"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
@@ -38,4 +38,39 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+end
+
+
+namespace :private_pub do
+
+  desc 'Start pub'
+  task :start do
+    on roles(:app) do
+     within current_path do
+      with rails_env: fetch(:rails_env)do
+        execute :bundle, "exec thin -C config/private_pub_thin.yml start"
+      end
+    end
+  end
+end
+desc 'Stop pub'
+task :stop do
+  on roles(:app) do
+   within current_path do
+    with rails_env: fetch(:rails_env)do
+      execute :bundle, "exec thin -C config/private_pub_thin.yml start"
+    end
+  end
+end
+end
+desc 'Restart pub'
+task :restart do
+  on roles(:app) do
+    within current_path do
+      with rails_env: fetch(:rails_env)do
+        execute :bundle, "exec thin -C config/private_pub_thin.yml restart"
+      end
+    end
+  end
+end
 end
